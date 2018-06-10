@@ -1,0 +1,22 @@
+plugins {
+    id 'groovy'
+    id 'application'
+}
+
+group 'com.tadaskay.discountr'
+version '1.0.0'
+
+mainClassName = 'com.tadaskay.discountr.App'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.5.0'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+}
