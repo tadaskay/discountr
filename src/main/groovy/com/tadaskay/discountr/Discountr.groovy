@@ -1,7 +1,11 @@
 package com.tadaskay.discountr
 
-class App {
+class Discountr {
     static void main(String[] args) {
         println "I'm running..."
     }
+
+    static String calculate(String transactions) {
+    }
+
 }
