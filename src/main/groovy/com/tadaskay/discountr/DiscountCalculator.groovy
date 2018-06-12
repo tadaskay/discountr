@@ -1,10 +1,10 @@
 package com.tadaskay.discountr
 
+import com.tadaskay.discountr.pricing.PriceTable
 import com.tadaskay.discountr.rule.DecisionRule
+import com.tadaskay.discountr.rule.EveryThirdLargeLpShipmentIsFree
 import com.tadaskay.discountr.rule.MatchLowestSmallPackageShippingPrice
 import com.tadaskay.discountr.rule.MonthlyDiscountQuota
-import com.tadaskay.discountr.pricing.PriceTable
-import com.tadaskay.discountr.rule.EveryThirdLargeLpShipmentIsFree
 import com.tadaskay.discountr.transaction.Transaction
 
 import java.text.DecimalFormat

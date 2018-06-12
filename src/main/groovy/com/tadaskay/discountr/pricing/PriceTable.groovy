@@ -3,9 +3,9 @@ package com.tadaskay.discountr.pricing
 import com.tadaskay.discountr.transaction.Provider
 import com.tadaskay.discountr.transaction.Size
 
-import static Provider.LP
-import static Provider.MR
-import static Size.*
+import static com.tadaskay.discountr.transaction.Provider.LP
+import static com.tadaskay.discountr.transaction.Provider.MR
+import static com.tadaskay.discountr.transaction.Size.*
 
 class PriceTable {
 
