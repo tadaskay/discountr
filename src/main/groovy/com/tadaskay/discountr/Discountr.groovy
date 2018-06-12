@@ -8,13 +8,10 @@ class Discountr {
     static void main(String[] args) {
         def priceRules = new PriceRules()
 
-        existingInputFile(args).withReader { reader ->
-            def line
-            while (line = reader.readLine()) {
-                def transaction = parseTransaction(line)
-                def priceLine = transaction?.with(priceRules.&calculate) ?: 'Ignored'
-                println([line, priceLine].join(' '))
-            }
+        existingInputFile(args).eachLine { line ->
+            def transaction = parseTransaction(line)
+            def priceLine = transaction?.with(priceRules.&calculate) ?: 'Ignored'
+            println([line, priceLine].join(' '))
         }
     }
 
@@ -43,9 +40,8 @@ class Discountr {
         return null
     }
 
-    private
-
     static String calculate(String transactions) {
+
     }
 
 }
