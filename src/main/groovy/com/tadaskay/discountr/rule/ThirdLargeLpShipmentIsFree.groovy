@@ -22,13 +22,13 @@ class ThirdLargeLpShipmentIsFree implements DiscountRule {
             return 0
         }
 
-        def yearMonth = YearMonth.from(transaction.date)
-        if (shippedFree[yearMonth]) {
+        def month = YearMonth.from(transaction.date)
+        if (shippedFree[month]) {
             return 0
         }
 
         def price = PriceTable.lookup(transaction.provider, transaction.size)
-        shippedFree[yearMonth] = true
+        shippedFree[month] = true
         return price
     }
 }

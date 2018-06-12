@@ -2,7 +2,7 @@ package com.tadaskay.discountr
 
 import spock.lang.Specification
 
-class DiscountrSpec extends Specification {
+class AppSpec extends Specification {
 
     def 'calculates discounts'() {
         def captureStdout = new ByteArrayOutputStream()
@@ -34,7 +34,7 @@ class DiscountrSpec extends Specification {
                     |'''
                     .stripMargin()
         when:
-            Discountr.process(transactions)
+            App.process(transactions)
         then:
             captureStdout.toString() ==
                 ''' |2015-02-01 S MR 1.50 0.50

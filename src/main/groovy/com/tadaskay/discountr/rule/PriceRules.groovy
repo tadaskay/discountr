@@ -3,6 +3,7 @@ package com.tadaskay.discountr.rule
 import com.tadaskay.discountr.Transaction
 
 class PriceRules {
+
     def discountRules = [
         new MatchLowestSmallPackagePrice(),
         new ThirdLargeLpShipmentIsFree(),

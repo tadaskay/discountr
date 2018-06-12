@@ -4,7 +4,7 @@ import com.tadaskay.discountr.rule.PriceRules
 
 import java.time.LocalDate
 
-class Discountr {
+class App {
 
     static void main(String[] args) {
         process(inputFile(args.find() ?: 'input.txt'))

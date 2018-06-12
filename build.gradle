@@ -6,7 +6,7 @@ plugins {
 group 'com.tadaskay.discountr'
 version '1.0.0'
 
-mainClassName = 'com.tadaskay.discountr.Discountr'
+mainClassName = 'com.tadaskay.discountr.App'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

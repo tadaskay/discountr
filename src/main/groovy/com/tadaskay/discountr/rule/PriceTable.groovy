@@ -8,7 +8,8 @@ import static com.tadaskay.discountr.Provider.MR
 import static com.tadaskay.discountr.Size.*
 
 class PriceTable {
-    static Map<Provider, Map<Size, BigDecimal>> priceTable = [
+
+    private static Map<Provider, Map<Size, BigDecimal>> priceTable = [
         (LP): [
             (S): 1.5,
             (M): 4.9,
@@ -19,9 +20,13 @@ class PriceTable {
             (M): 3,
             (L): 4,
         ]
-    ]
+    ] as Map
 
     static BigDecimal lookup(Provider provider, Size size) {
-        priceTable[provider][size]
+        return priceTable[provider][size]
+    }
+
+    static Map<Provider, BigDecimal> lookup(Size size) {
+        return priceTable.collectEntries { provider, sizeToPrice -> [provider, sizeToPrice[size]] } as Map
     }
 }

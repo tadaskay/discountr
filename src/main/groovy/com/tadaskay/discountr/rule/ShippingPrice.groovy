@@ -3,6 +3,7 @@ package com.tadaskay.discountr.rule
 import java.text.DecimalFormat
 
 class ShippingPrice {
+
     BigDecimal price
     BigDecimal discount
 
@@ -13,7 +14,7 @@ class ShippingPrice {
         ].join(' ')
     }
 
-    static String decimalFormat(decimal) {
+    private static String decimalFormat(decimal) {
         new DecimalFormat('0.00').format(decimal)
     }
 }
