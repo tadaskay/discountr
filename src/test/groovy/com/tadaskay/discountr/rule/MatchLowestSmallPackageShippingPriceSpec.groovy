@@ -9,17 +9,13 @@ import static com.tadaskay.discountr.transaction.Provider.MR
 import static com.tadaskay.discountr.transaction.Size.*
 import static java.time.LocalDate.now
 
-class MatchLowestSmallPackagePriceSpec extends Specification {
+class MatchLowestSmallPackageShippingPriceSpec extends Specification {
 
-    def rule = new MatchLowestSmallPackagePrice()
+    def rule = new MatchLowestSmallPackageShippingPrice()
 
     @Unroll
-    def 'matches smallest shipping cost of S package: #size #provider -> #discount'() {
-        def transaction = new Transaction(
-            date: now(),
-            provider: provider,
-            size: size,
-        )
+    def 'matches the lowest shipping cost of small package: #size #provider -> #discount'() {
+        def transaction = new Transaction(date: now(), provider: provider, size: size)
         expect:
             rule.discount(transaction) == discount
         where:

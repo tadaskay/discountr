@@ -8,7 +8,7 @@ import java.time.YearMonth
 import static com.tadaskay.discountr.transaction.Provider.LP
 import static com.tadaskay.discountr.transaction.Size.L
 
-class ThirdLargeLpShipmentIsFree implements DiscountRule {
+class EveryThirdLargeLpShipmentIsFree implements DiscountRule {
 
     private shipmentCounter = 0
     private Map<YearMonth, Boolean> shippedFree = [:].withDefault { false }

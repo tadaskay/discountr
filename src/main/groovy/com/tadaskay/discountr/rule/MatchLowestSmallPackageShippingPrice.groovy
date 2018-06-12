@@ -5,7 +5,7 @@ import com.tadaskay.discountr.transaction.Transaction
 
 import static com.tadaskay.discountr.transaction.Size.S
 
-class MatchLowestSmallPackagePrice implements DiscountRule {
+class MatchLowestSmallPackageShippingPrice implements DiscountRule {
 
     @Override
     BigDecimal discount(Transaction transaction) {

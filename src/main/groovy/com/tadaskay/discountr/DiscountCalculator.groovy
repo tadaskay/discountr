@@ -1,10 +1,10 @@
 package com.tadaskay.discountr
 
 import com.tadaskay.discountr.rule.DecisionRule
-import com.tadaskay.discountr.rule.MatchLowestSmallPackagePrice
+import com.tadaskay.discountr.rule.MatchLowestSmallPackageShippingPrice
 import com.tadaskay.discountr.rule.MonthlyDiscountQuota
 import com.tadaskay.discountr.pricing.PriceTable
-import com.tadaskay.discountr.rule.ThirdLargeLpShipmentIsFree
+import com.tadaskay.discountr.rule.EveryThirdLargeLpShipmentIsFree
 import com.tadaskay.discountr.transaction.Transaction
 
 import java.text.DecimalFormat
@@ -12,8 +12,8 @@ import java.text.DecimalFormat
 class DiscountCalculator {
 
     private discountRules = [
-        new MatchLowestSmallPackagePrice(),
-        new ThirdLargeLpShipmentIsFree(),
+        new MatchLowestSmallPackageShippingPrice(),
+        new EveryThirdLargeLpShipmentIsFree(),
     ]
 
     private decisionRules = [

@@ -10,21 +10,18 @@ import static com.tadaskay.discountr.transaction.Provider.LP
 import static com.tadaskay.discountr.transaction.Provider.MR
 import static com.tadaskay.discountr.transaction.Size.L
 
-class ThirdLargeLpShipmentIsFreeSpec extends Specification {
+class EveryThirdLargeLpShipmentIsFreeSpec extends Specification {
 
     @Shared
-    def rule = new ThirdLargeLpShipmentIsFree()
+    def rule = new EveryThirdLargeLpShipmentIsFree()
 
-    def 'every third large LP package is free, maximum one per month'() {
-        def transaction = new Transaction(
-            date: YearMonth.parse(yearMonth).atDay(1),
-            provider: provider,
-            size: size,
-        )
+    def 'every third large LP package is shipped free, once per month'() {
+        def transaction = new Transaction(date: YearMonth.parse(month).atDay(1), provider: provider, size: size)
+
         expect:
             rule.discount(transaction) == discount
         where:
-            yearMonth | size | provider || discount
+            month     | size | provider || discount
             '2017-01' | L    | LP       || 0
             '2017-01' | L    | LP       || 0
             '2017-01' | L    | MR       || 0
