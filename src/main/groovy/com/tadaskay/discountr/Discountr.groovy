@@ -5,23 +5,28 @@ import com.tadaskay.discountr.rule.PriceRules
 import java.time.LocalDate
 
 class Discountr {
-    static void main(String[] args) {
-        def priceRules = new PriceRules()
 
-        existingInputFile(args).eachLine { line ->
+    static void main(String[] args) {
+        process(inputFile(args.find() ?: 'input.txt'))
+    }
+
+    protected static void process(content) {
+        def priceRules = new PriceRules()
+        content.eachLine { line ->
             def transaction = parseTransaction(line)
             def priceLine = transaction?.with(priceRules.&calculate) ?: 'Ignored'
             println([line, priceLine].join(' '))
         }
     }
 
-    private static File existingInputFile(String[] args) {
-        def file = args.find()?.with { new File(it) }
-        if (!file || !file.exists()) {
-            println 'FATAL! Please provide an input file.'
-            System.exit(-1)
+    private static File inputFile(String filename) {
+        return new File(filename).with {
+            if (!it.exists()) {
+                println "Input file '${filename}' does not exist"
+                System.exit(-1)
+            }
+            return it
         }
-        return file
     }
 
     private static Transaction parseTransaction(String line) {
@@ -38,10 +43,6 @@ class Discountr {
         } catch (ignored) {
         }
         return null
-    }
-
-    static String calculate(String transactions) {
-
     }
 
 }
