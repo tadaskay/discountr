@@ -20,4 +20,8 @@ class PriceTable {
             (L): 4,
         ]
     ]
+
+    static BigDecimal lookup(Provider provider, Size size) {
+        priceTable[provider][size]
+    }
 }

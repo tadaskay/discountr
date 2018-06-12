@@ -10,7 +10,7 @@ class MatchLowestSmallPackagePrice implements DiscountRule {
         if (transaction.size != S) {
             return 0
         }
-        def price = PriceTable.priceTable[transaction.provider][transaction.size]
+        def price = PriceTable.lookup(transaction.provider, transaction.size)
         def lowestPrice = PriceTable.priceTable.values()*.get(S).min()
         return [0, price - lowestPrice].max()
     }

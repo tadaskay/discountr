@@ -27,7 +27,7 @@ class ThirdLargeLpShipmentIsFree implements DiscountRule {
             return 0
         }
 
-        def price = PriceTable.priceTable[transaction.provider][transaction.size]
+        def price = PriceTable.lookup(transaction.provider, transaction.size)
         shippedFree[yearMonth] = true
         return price
     }
