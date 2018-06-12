@@ -13,10 +13,10 @@ class App {
     }
 
     protected static void process(content) {
-        def priceRules = new DiscountCalculator()
+        def discountCalculator = new DiscountCalculator()
         content.eachLine { line ->
             def transaction = parseTransaction(line)
-            def priceLine = transaction?.with(priceRules.&calculate) ?: 'Ignored'
+            def priceLine = transaction?.with(discountCalculator.&calculate) ?: 'Ignored'
             println([line, priceLine].join(' '))
         }
     }
