@@ -4,12 +4,15 @@ import com.tadaskay.discountr.Transaction
 
 class PriceRules {
     def rules = [
+        new MatchLowestSmallPackagePrice()
     ]
 
     ShippingPrice calculate(Transaction transaction) {
+        def discount = rules.collect { it.discount(transaction) }.max()
+        def originalPrice = PriceTable.priceTable[transaction.provider][transaction.size]
         return new ShippingPrice(
-            price: 1.00,
-            discount: 0
+            price: originalPrice - discount,
+            discount: discount,
         )
     }
 }
