@@ -24,7 +24,7 @@ class DiscountCalculator {
 
     ShippingPrice calculate(Transaction transaction) {
         def originalPrice = PriceTable.lookup(transaction.provider, transaction.size)
-        def discounts = discountRules.collect { it.discount(transaction) }
+        def discounts = discountRules*.discount(transaction)
         def lastDecision = decisionRules.inject(0.0) { BigDecimal lastDecision, rule ->
             rule.decide(transaction, discounts, lastDecision)
         }

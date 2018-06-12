@@ -20,7 +20,7 @@ class PriceTable {
             (M): 3,
             (L): 4,
         ]
-    ] as Map
+    ]
 
     static BigDecimal lookup(Provider provider, Size size) {
         return priceTable[provider][size]
