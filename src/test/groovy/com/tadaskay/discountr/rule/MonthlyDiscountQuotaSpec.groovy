@@ -1,10 +1,9 @@
 package com.tadaskay.discountr.rule
 
-import com.tadaskay.discountr.Transaction
+import com.tadaskay.discountr.transaction.Transaction
 import spock.lang.Shared
 import spock.lang.Specification
 
-import java.time.LocalDate
 import java.time.YearMonth
 
 class MonthlyDiscountQuotaSpec extends Specification {

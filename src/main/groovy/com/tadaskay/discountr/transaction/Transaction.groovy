@@ -1,4 +1,4 @@
-package com.tadaskay.discountr
+package com.tadaskay.discountr.transaction
 
 import groovy.transform.ToString
 

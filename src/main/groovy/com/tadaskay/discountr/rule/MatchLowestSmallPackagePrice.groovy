@@ -1,8 +1,9 @@
 package com.tadaskay.discountr.rule
 
-import com.tadaskay.discountr.Transaction
+import com.tadaskay.discountr.pricing.PriceTable
+import com.tadaskay.discountr.transaction.Transaction
 
-import static com.tadaskay.discountr.Size.S
+import static com.tadaskay.discountr.transaction.Size.S
 
 class MatchLowestSmallPackagePrice implements DiscountRule {
 

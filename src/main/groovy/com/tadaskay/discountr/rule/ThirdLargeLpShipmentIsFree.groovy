@@ -1,11 +1,12 @@
 package com.tadaskay.discountr.rule
 
-import com.tadaskay.discountr.Transaction
+import com.tadaskay.discountr.pricing.PriceTable
+import com.tadaskay.discountr.transaction.Transaction
 
 import java.time.YearMonth
 
-import static com.tadaskay.discountr.Provider.LP
-import static com.tadaskay.discountr.Size.L
+import static com.tadaskay.discountr.transaction.Provider.LP
+import static com.tadaskay.discountr.transaction.Size.L
 
 class ThirdLargeLpShipmentIsFree implements DiscountRule {
 

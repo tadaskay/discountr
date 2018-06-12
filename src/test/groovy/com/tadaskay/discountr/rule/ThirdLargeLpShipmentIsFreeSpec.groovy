@@ -1,14 +1,14 @@
 package com.tadaskay.discountr.rule
 
-import com.tadaskay.discountr.Transaction
+import com.tadaskay.discountr.transaction.Transaction
 import spock.lang.Shared
 import spock.lang.Specification
 
 import java.time.YearMonth
 
-import static com.tadaskay.discountr.Provider.LP
-import static com.tadaskay.discountr.Provider.MR
-import static com.tadaskay.discountr.Size.L
+import static com.tadaskay.discountr.transaction.Provider.LP
+import static com.tadaskay.discountr.transaction.Provider.MR
+import static com.tadaskay.discountr.transaction.Size.L
 
 class ThirdLargeLpShipmentIsFreeSpec extends Specification {
 

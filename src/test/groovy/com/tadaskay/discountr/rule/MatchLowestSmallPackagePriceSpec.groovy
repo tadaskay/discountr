@@ -1,12 +1,12 @@
 package com.tadaskay.discountr.rule
 
-import com.tadaskay.discountr.Transaction
+import com.tadaskay.discountr.transaction.Transaction
 import spock.lang.Specification
 import spock.lang.Unroll
 
-import static com.tadaskay.discountr.Provider.LP
-import static com.tadaskay.discountr.Provider.MR
-import static com.tadaskay.discountr.Size.*
+import static com.tadaskay.discountr.transaction.Provider.LP
+import static com.tadaskay.discountr.transaction.Provider.MR
+import static com.tadaskay.discountr.transaction.Size.*
 import static java.time.LocalDate.now
 
 class MatchLowestSmallPackagePriceSpec extends Specification {

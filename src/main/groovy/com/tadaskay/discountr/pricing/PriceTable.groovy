@@ -1,11 +1,11 @@
-package com.tadaskay.discountr.rule
+package com.tadaskay.discountr.pricing
 
-import com.tadaskay.discountr.Provider
-import com.tadaskay.discountr.Size
+import com.tadaskay.discountr.transaction.Provider
+import com.tadaskay.discountr.transaction.Size
 
-import static com.tadaskay.discountr.Provider.LP
-import static com.tadaskay.discountr.Provider.MR
-import static com.tadaskay.discountr.Size.*
+import static Provider.LP
+import static Provider.MR
+import static Size.*
 
 class PriceTable {
 

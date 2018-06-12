@@ -1,6 +1,6 @@
 package com.tadaskay.discountr.rule
 
-import com.tadaskay.discountr.Transaction
+import com.tadaskay.discountr.transaction.Transaction
 
 import java.time.YearMonth
 

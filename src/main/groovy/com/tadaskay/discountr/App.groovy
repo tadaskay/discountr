@@ -1,6 +1,8 @@
 package com.tadaskay.discountr
 
-import com.tadaskay.discountr.rule.PriceRules
+import com.tadaskay.discountr.transaction.Provider
+import com.tadaskay.discountr.transaction.Size
+import com.tadaskay.discountr.transaction.Transaction
 
 import java.time.LocalDate
 
@@ -11,7 +13,7 @@ class App {
     }
 
     protected static void process(content) {
-        def priceRules = new PriceRules()
+        def priceRules = new DiscountCalculator()
         content.eachLine { line ->
             def transaction = parseTransaction(line)
             def priceLine = transaction?.with(priceRules.&calculate) ?: 'Ignored'
