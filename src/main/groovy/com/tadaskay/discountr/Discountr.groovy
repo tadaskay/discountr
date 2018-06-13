@@ -44,5 +44,4 @@ class Discountr {
         }
         return null
     }
-
 }

@@ -9,8 +9,8 @@ import static com.tadaskay.discountr.Size.L
 
 class ThirdLargeLpShipmentIsFree implements DiscountRule {
 
-    def shipmentCounter = 0
-    Map<YearMonth, Boolean> shippedFree = [:].withDefault { false }
+    private shipmentCounter = 0
+    private Map<YearMonth, Boolean> shippedFree = [:].withDefault { false }
 
     @Override
     BigDecimal discount(Transaction transaction) {
